@@ -1,6 +1,6 @@
 import random
 
-from milestone_3 import check_guess
+
 # computers list of words that it chooses from
 word_list = ['pear', 'mango', 'nectarine', 'orange', 'peach']
 print(word_list)
@@ -35,15 +35,23 @@ class Hangman:
                 print('You already tried that letter!')
                     # self.list_of_guesses += letter 
             else:
-                check_guess(self, guess)
-                for letter in word:
-                    if letter != guess:
-                        self.list_of_guesses += guess
-                        print(self.list_of_guesses)
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess) 
+                print(self.list_of_guesses)
+                
     
-    ask_for_input(self)
+hangman = Hangman(word_list, 5)
+hangman.ask_for_input()
+print(hangman.list_of_guesses)
 
                 
+                
+    
+            
+        
+
+    
+
                 
     
             
