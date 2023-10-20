@@ -13,19 +13,27 @@ print(word)     # Egle, delete the print later
 
 class Hangman:
     def __init__(self, word_list, num_lives=5):
-        self.word_list = word_list      # a list of words from which computer picks a random word
-        self.num_lives = num_lives      # user has 5 lives and looses one if chooses wrong answer
-        self.word = None                # word to be guessed that was chosen by computer
-        self.word_guessed = None        # list - a list of the letters of the word, with _ for each letter not yet guessed
-        self.num_letters = None         # the number of UNIQUE letters in the word that have not been guessed yet
-        self.list_of_guesses = []     #A list of the guesses that have already been tried.
+        self.word_list = word_list           # a list of words from which computer picks a random word
+        self.num_lives = num_lives           # user has 5 lives and looses one if chooses wrong answer
+        self.word = random.choice(word_list) # word to be guessed that was chosen by computer
+        self.num_letters = len(self.word)                # the number of UNIQUE letters in the word that have not been guessed yet
+        self.word_guessed = ["_" for i in range(self.num_letters)]               # list - a list of the letters of the word, with _ for each letter not yet guessed
+        self.list_of_guesses = []            #A list of the guesses that have already been tried.
+    
     def check_guess(self, guess):
         guess = guess.lower()
         for letter in word:
             if letter == guess:
                 print(f'Good guess! {guess} is in the word.')
+                for position in range(self.num_letters):
+                    letter = word[position]
+                    if letter == guess:
+                        self.word_guessed[position] = letter
+                        self.num_letters -= 1
+                        print(f'Number of letters to be guessed: {self.num_letters}') # to be deleted 
             else:
                 print(f'Sorry, {guess} is not in the word. Try again.')
+    
     def ask_for_input(self):
         while True:
             guess = input('Please, enter  a single letter: ')#.lower()
