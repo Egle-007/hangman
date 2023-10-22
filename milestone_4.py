@@ -25,11 +25,11 @@ class Hangman:
         for letter in word:
             if letter == guess:
                 print(f'Good guess! {guess} is in the word.')
-                for position in range(self.num_letters):
+                for position in range(self.num_letters):        # this block updates word_guessed list
                     letter = word[position]
                     if letter == guess:
                         self.word_guessed[position] = letter
-                        self.num_letters -= 1
+                        self.num_letters -= 1                   # and subtracts a unique number of letters when the guess is right
                         print(f'Number of letters to be guessed: {self.num_letters}') # to be deleted 
             else:
                 print(f'Sorry, {guess} is not in the word. Try again.')
