@@ -1,4 +1,4 @@
-# Hangman
+# Hangman 
 
 ![Hangman picture](//hangman/Hangman_picture.png)
 
@@ -8,7 +8,7 @@
 
 This project is an implementation of the Hangman game, where the computer picks a random word and the user tries to guess it. 
 
-## Rules of the game
+## Rules of the game 
 
     1. In the beggining of the game a player has 5 lives.
     2. A player guesses a letter: 
@@ -26,10 +26,18 @@ You are able to **start** the game by typing the following commands in the comma
 ![Example](image.png)
 
 ## Cloning the game
+You are able to **clone** the game by typing the following commands in the command line:
 
     git clone -c https://github.com/Egle-007/hangman.git
 
+## Files in repository
+
+ * hangman.py - to run the game you need to run this file.
+ * milestone files are included to show the progress of the project deveplopment.
+ * lisence.md
+ * README.md 
+ * .gitignore and others
 ## Lisence
 
-    MIT lisence
+    This project is licensed under the MIT lisence.
 
