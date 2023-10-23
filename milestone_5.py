@@ -109,12 +109,14 @@ class Hangman:
                     print(f'Congratulations. You won! The correct word is \'{self.__word}\'!')
                     break
                 
+'''play_game(word_list) is a function that runs the game and word_list is used as a parameter'''
 
+# Defining the function to play the Hangman game.
 def play_game(word_list):
   
     game = Hangman(word_list, num_lives=5)
     game.ask_for_input()
 
-
+# Calling the function and starting the game.
 play_game(word_list)
 
