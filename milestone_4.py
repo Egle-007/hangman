@@ -22,9 +22,7 @@ class Hangman:
             letter = self.word[position]
             if letter == guess:
                 self.word_guessed[position] = guess
-                # print(f'Word to be guessed: {self.word_guessed}') # to be deleted
-        # self.num_letters -= 1                   # and subtracts a unique number of letters when the guess is right
-        # print(f'{self.num_letters} letters to guess')   
+               
 
     def check_guess(self, guess):
         if guess in self.word:

@@ -1,25 +1,35 @@
 # Hangman
 
-## What is Hangman? 
+![Hangman picture](//hangman/Hangman_picture.png)
 
-Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
+## About the project 
 
-## The Hangman project and my learning experiencce
+*Hangman* is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
 
-### What is hangman project?
+This project is an implementation of the Hangman game, where the computer picks a random word and the user tries to guess it. 
 
-This project is an implementation of the Hangman game, where the computer picks a random a word and the user tries to guess it. 
+## Rules of the game
 
-### My learning experience
+    1. In the beggining of the game a player has 5 lives.
+    2. A player guesses a letter: 
+        - If letter is correct, it is replaces a dash(-es) on the hidden word.
+        - If it doesn't match any of the letters in the hidden word, a player then loses a life.
+    4. If a player has no lives left, the game is lost.
+    5. If all letters are rewealed before a player loses the lives - game is won. 
 
-Building this project I have shown what I have learned so far on my journey on the AiCore.
+## Starting the game
+You are able to **start** the game by typing the following commands in the command line:
 
-To build this project I have used:
+    $ python hangman.py
 
-    1.
-    2
-    ...
+
+![Example](image.png)
+
+## Cloning the game
+
+    git clone -c https://github.com/Egle-007/hangman.git
 
 ## Lisence
 
-Here will be lisence information
+    MIT lisence
+
