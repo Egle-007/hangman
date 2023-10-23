@@ -8,6 +8,7 @@ class Hangman:
     '''
     A Hangman Game that asks the user for a letter and checks if it is in the word.
     It starts with a default number of lives and a random word from the word_list.
+    The game ends if player loses all lives or guesses the word. 
 
     
     Parameters:
@@ -45,7 +46,7 @@ class Hangman:
     check_guess(guess)
         Checks if the letter is in the word.
     ask_for_input()
-        Asks the user to guess a letter.
+        Asks the user to guess a letter and defines when the game is over.
     '''
     #Initialising the attributes of the class
     def __init__(self, word_list, num_lives=5):
@@ -55,10 +56,11 @@ class Hangman:
         self.word_length = len(self.__word)    
         self.num_letters = len(set(self.__word))    
         self.word_guessed = ["_" for position in range(self.word_length)]            
-        self.list_of_guesses = []            
+        self.list_of_guesses = []
+                  
 
-        print(f' Initial number of lives: {self.num_lives}')
-        print(f' The word to be guessed: {self.word_guessed}')
+        print(f'Initial number of lives: {self.num_lives}')
+        print(f'The word to be guessed: {self.word_guessed}\n')
 
     # Defining a method to update the guess list
     def update_guessed_word(self,guess):
@@ -66,6 +68,7 @@ class Hangman:
             letter = self.__word[position]
             if letter == guess:
                 self.word_guessed[position] = guess
+
 
     # Defining a method that firstly checks if the guess is correct. 
     # If it is, then runs update_guessed_word(guess) method and subtracts the number of unique letters.
@@ -82,11 +85,12 @@ class Hangman:
                 print(f'Sorry, {guess} is not in the word. Try again.')
                 self.num_lives -= 1
                 print(f'You have {self.num_lives} lives left.')
-
-
-    # Defining a method for continuous user imput. 
+    
+   
+    # Defining a method for continuous user input. 
     # Sets conditions of an input and rejects incorrect input
-    # If conditions are met, it calls check_guess(guess) method and appends the list_of_guesses.
+    # If conditions are met, it calls check_guess(guess) method and appends the list_of_guesses
+    # as wel as checks if the game is not over.
     def ask_for_input(self):
         while True:
             guess = input('Please, enter  a single letter: ').lower()
@@ -97,27 +101,20 @@ class Hangman:
             else:
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
-                print(f'List of your guesses: {self.list_of_guesses}')
-
-
-
-# hangman = Hangman(word_list, 5)
-# hangman.ask_for_input()
-# print(hangman.list_of_guesses)
+                print(f'List of your guesses: {self.list_of_guesses}\n')
+                if self.num_lives == 0:
+                    print(f'You lost! The correct word is \'{self.__word}\'!')
+                    break
+                elif self.num_letters == 0 and self.num_lives !=0:
+                    print(f'Congratulations. You won! The correct word is \'{self.__word}\'!')
+                    break
+                
 
 def play_game(word_list):
-    # num_lives = 5
-    game = Hangman(word_list, 5)
-    while True:
-        if game.num_lives == 0:
-            print('You lost!')
-            break
-        elif game.num_lives > 0 and game.num_letters == 0:
-            print('Congratulations. You won the game!')
-            break
-        elif game.num_letters > 0:
-            game.ask_for_input()
-        
+  
+    game = Hangman(word_list, num_lives=5)
+    game.ask_for_input()
+
 
 play_game(word_list)
 
