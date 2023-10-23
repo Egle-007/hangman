@@ -1,6 +1,6 @@
 # Hangman 
 
-![Hangman picture](//hangman/Hangman_picture.png)
+![Hangman](image-1.png)
 
 ## About the project 
 
