@@ -30,14 +30,16 @@ You are able to **clone** the game by typing the following commands in the comma
 
     git clone -c https://github.com/Egle-007/hangman.git
 
-## Files in repository
+## Other info
+
+### Files in repository
 
  * hangman.py - to run the game you need to run this file.
  * milestone files are included to show the progress of the project deveplopment.
  * lisence.md
  * README.md 
  * .gitignore and others
-## Lisence
+### Lisence
 
     This project is licensed under the MIT lisence.
 
